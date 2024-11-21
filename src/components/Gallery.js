@@ -8,8 +8,7 @@ const Gallery = () => {
   const [photos, setPhotos] = useState([]);
   const [error, setError] = useState(null);
   const [modal, setModal] = useState(false);
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const [selectedKey, setSelectedKey] = useState(null);
+  const [photo0, setPhoto0] = useState(null);
   const fetchPhotos = (query = "") => {
     axios
       .get(`https://api.pexels.com/v1/search?query=${query}&per_page=10`, {
@@ -39,18 +38,22 @@ const Gallery = () => {
       {error && <p>{error}</p>}
       <div className="photo-container">
         {photos.map((photo) => (
-          <PhotoCard
+          <div
             key={photo.id}
-            photo={photo}
+            className="photo-card"
             onClick={() => {
+              setPhoto0(photo);
               setModal(true);
-              setSelectedPhoto(photo);
-              setSelectedKey(photo.id);
-              console.log("a");
             }}
-          />
+          >
+            <PhotoCard key={photo.id} photo={photo} />
+          </div>
         ))}
       </div>
+
+      <article className="modal" onClick={() => setModal((w) => !w)}>
+        {modal && <PhotoBig photo={photo0} />}
+      </article>
     </div>
   );
 };

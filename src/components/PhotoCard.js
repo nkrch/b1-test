@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import { PhotoBig } from "./PhotoBig";
 
 function PhotoCard({ photo }) {
-  function openBig(params) {}
-
   function saveToFavourites(photo) {
     let loacale = localStorage.getItem("pexelsby");
     console.log("fav");
@@ -16,7 +15,7 @@ function PhotoCard({ photo }) {
   }
 
   return (
-    <div className="photo-card" onClick={() => openBig(photo)}>
+    <div>
       <img src={photo.src.medium} alt={photo.photographer} />
       <div className="photo-card-info">
         <p>{photo.photographer}</p>

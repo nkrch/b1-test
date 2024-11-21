@@ -4,6 +4,7 @@ const Filters = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
+    window.confirm("Are you sure you want to search?");
     onSearch(query);
   };
 

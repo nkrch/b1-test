@@ -14,7 +14,7 @@ function PhotoCardFav({ photo }) {
   }
 
   return (
-    <div className="photo-card" onClick={() => openBig(photo)}>
+    <div className="photo-card">
       <img src={photo.src.medium} alt={photo.photographer} />
       <div className="photo-card-info">
         <p>{photo.photographer}</p>
