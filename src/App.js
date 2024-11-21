@@ -11,10 +11,10 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/b1-test/" element={<Main />} />
+        <Route path="/b1-test/gallery" element={<Gallery />} />
 
-        <Route path="/favorites" element={<Saved />} />
+        <Route path="/b1-test/favorites" element={<Saved />} />
       </Routes>
     </Router>
   );
